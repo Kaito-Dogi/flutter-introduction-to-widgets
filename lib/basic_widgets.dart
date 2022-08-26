@@ -10,7 +10,7 @@ class MyAppBar extends StatelessWidget {
     return Container(
       height: 56.0,
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
-      decoration: BoxDecoration(color: Color.blue[500]),
+      decoration: BoxDecoration(color: Colors.blue[500]),
       child: Row(
         children: [
           const IconButton(
@@ -32,17 +32,48 @@ class MyAppBar extends StatelessWidget {
   }
 }
 
+class MyScaffold extends StatelessWidget {
+  const MyScaffold({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      child: Column(
+        children: [
+          MyAppBar(
+            title: Text(
+              'Example title',
+              style: Theme
+                  .of(context)
+                  .primaryTextTheme
+                  .headline6,
+            ),
+          ),
+          const Expanded(
+            child: Center(
+              child: Text('Hello, world!'),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
 class BasicWidgetsApp extends StatelessWidget {
-  const BasicWidgetsApp({Key? key}) :super(key: key)
+  const BasicWidgetsApp({Key? key}) :super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Basic Widgets',
-      home: SafeArea(
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const SafeArea(
         child: MyScaffold(),
       ),
-    )
+    );
   }
 }
 
