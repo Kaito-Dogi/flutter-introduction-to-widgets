@@ -43,10 +43,7 @@ class MyScaffold extends StatelessWidget {
           MyAppBar(
             title: Text(
               'Example title',
-              style: Theme
-                  .of(context)
-                  .primaryTextTheme
-                  .headline6,
+              style: Theme.of(context).primaryTextTheme.headline6,
             ),
           ),
           const Expanded(
@@ -61,7 +58,7 @@ class MyScaffold extends StatelessWidget {
 }
 
 class BasicWidgetsApp extends StatelessWidget {
-  const BasicWidgetsApp({Key? key}) :super(key: key);
+  const BasicWidgetsApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -76,4 +73,3 @@ class BasicWidgetsApp extends StatelessWidget {
     );
   }
 }
-
